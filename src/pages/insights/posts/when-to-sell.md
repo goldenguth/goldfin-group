@@ -7,7 +7,7 @@ readTime: 7 min read
 excerpt: Most business owners consider selling too late. By the time they
   realize it, they've already missed the most valuable window in their financial
   life.
-featured: false
+featured: true
 youtube: ll76xcVqSXY
 ---
 In the last six months alone, I’ve spoken to more than 100 business owners about their plans. And here’s what I can say: Most business owners consider selling too late. .
