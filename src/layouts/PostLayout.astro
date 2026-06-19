@@ -1,6 +1,12 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-const { frontmatter } = Astro.props;
+const { frontmatter, rawContent } = Astro.props;
+
+// Auto-calculate read time: 225 words per minute, minimum 1 minute
+const words = rawContent ? rawContent().trim().split(/\s+/).length : 0;
+const minutes = Math.max(1, Math.round(words / 225));
+const readTime = frontmatter.readTime || `${minutes} min read`;
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -17,7 +23,7 @@ const articleSchema = {
     <div class="wrap" style="max-width:760px">
       <p class="eyebrow">{frontmatter.tag}</p>
       <h1 style="font-size:clamp(32px,4vw,52px)">{frontmatter.title}</h1>
-      <p class="quiet" style="margin-top:18px">{frontmatter.readTime}</p>
+      <p class="quiet" style="margin-top:18px">{readTime} · {frontmatter.date}</p>
     </div>
   </div>
   <section>

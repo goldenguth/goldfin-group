@@ -5,6 +5,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 
+function readTime(post) {
+  const words = post.rawContent ? post.rawContent().trim().split(/\s+/).length : 0;
+  const mins = Math.max(1, Math.round(words / 225));
+  return post.frontmatter.readTime || `${mins} min read`;
+}
+
 const featured = posts.find(p => p.frontmatter.featured) || posts[0];
 const rest = posts.filter(p => p.url !== featured.url);
 ---
@@ -35,7 +41,7 @@ const rest = posts.filter(p => p.url !== featured.url);
         <a class="post" href={post.url} style="text-decoration:none;color:inherit">
           <span class="tag">{post.frontmatter.tag}</span>
           <h3>{post.frontmatter.title}</h3>
-          <span class="read">{post.frontmatter.readTime}</span>
+          <span class="read">{readTime(post)}</span>
         </a>
       ))}
     </div>

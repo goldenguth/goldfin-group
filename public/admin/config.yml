@@ -22,7 +22,7 @@ collections:
         widget: select
         options: [Before, During, After, Mindset]
       - { label: Publish Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: Read Time, name: readTime, widget: string, hint: 'e.g. "7 min read"' }
+      - { label: Read Time, name: readTime, widget: string, required: false, hint: "Leave blank — calculated automatically from word count. Override here if needed (e.g. '12 min read')." }
       - { label: Excerpt, name: excerpt, widget: text, hint: "1-2 sentences shown on the listing page" }
       - { label: Featured, name: featured, widget: boolean, default: false, hint: "Show this post in the featured slot at the top of Insights" }
       - { label: YouTube Video ID, name: youtube, widget: string, required: false, hint: 'The part after watch?v= in the YouTube URL. Leave blank if none.' }
