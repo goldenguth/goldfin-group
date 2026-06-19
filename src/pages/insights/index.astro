@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Pull every Markdown post from ./posts and sort newest first
+const posts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+
+const featured = posts.find(p => p.frontmatter.featured) || posts[0];
+const rest = posts.filter(p => p.url !== featured.url);
+---
+<BaseLayout
+  title="Insights — Goldfin Group"
+  description="Plain-language strategy for owners thinking about selling, in the middle of a deal, or living with the wire already in the account."
+  path="/insights"
+>
+<div class="pagehead">
+  <div class="wrap">
+    <p class="eyebrow">Insights</p>
+    <h1>Think clearly about <em>the biggest deal of your life.</em></h1>
+    <p class="lead">Plain-language strategy for owners thinking about selling, in the middle of a deal, or living with the wire already in the account. New article every week, from the same conversations behind the YouTube channel.</p>
+  </div>
+</div>
+<section>
+  <div class="wrap">
+    {featured && (
+      <a class="featured" href={featured.url} style="display:block;text-decoration:none">
+        <p class="eyebrow">Featured</p>
+        <h3>{featured.frontmatter.title}</h3>
+        <p>{featured.frontmatter.excerpt}</p>
+        <div class="cta-row"><span class="btn btn-gold">Read the article</span></div>
+      </a>
+    )}
+    <div class="post-list">
+      {rest.map(post => (
+        <a class="post" href={post.url} style="text-decoration:none;color:inherit">
+          <span class="tag">{post.frontmatter.tag}</span>
+          <h3>{post.frontmatter.title}</h3>
+          <span class="read">{post.frontmatter.readTime}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+</BaseLayout>
