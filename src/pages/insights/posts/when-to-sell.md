@@ -2,7 +2,7 @@
 layout: ../../../layouts/PostLayout.astro
 title: When Is the RIGHT Time to Sell Your Business?
 tag: Before
-date: 2026-05-14
+date: 2026-04-14
 readTime: 7 min read
 excerpt: Most business owners consider selling too late. By the time they
   realize it, they've already missed the most valuable window in their financial
