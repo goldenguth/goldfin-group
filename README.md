@@ -8,7 +8,7 @@ You own this entirely. No monthly platform fee, no gatekeeper. Hosting is free o
 
 ## BEFORE YOU DEPLOY: three things to fill in
 
-1. **Your booking link.** Search the project for `CALENDAR-LINK-HERE` and replace every instance with your real GreenRope booking URL. (It appears in the nav, footer, and each blog post.)
+1. **Your booking link — already done.** The OnceHub embed is live at `/book` and all "Book a 15-minute call" buttons across the site point there. No action needed.
 2. **Your LinkedIn URL.** In `src/layouts/BaseLayout.astro`, the schema has a placeholder LinkedIn link. Update it.
 3. **Compliance.** Cat reviews the live preview before the domain is connected. The footer disclosure is already in place.
 
