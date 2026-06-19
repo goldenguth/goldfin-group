@@ -1,0 +1,79 @@
+---
+const { title = "Goldfin Group", description = "Goldfin Group is a wealth management firm headquartered in Franklin, Tennessee, with a client service office in Albuquerque, New Mexico, serving owners of $7 million to $70 million businesses before, during, and after the sale of their companies.", path = "/" } = Astro.props;
+const site = "https://goldfingroup.com";
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "Goldfin Group",
+  "description": description,
+  "url": site,
+  "founder": {
+    "@type": "Person",
+    "name": "Ryan Guth",
+    "jobTitle": "Founder and Chief Strategist, CFP\u00ae",
+    "sameAs": [
+      "https://www.linkedin.com/in/ryan-guth/"
+    ]
+  },
+  "address": [
+    {"@type": "PostalAddress", "addressLocality": "Franklin", "addressRegion": "TN", "addressCountry": "US"},
+    {"@type": "PostalAddress", "addressLocality": "Albuquerque", "addressRegion": "NM", "addressCountry": "US"}
+  ]
+};
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={site + path} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/global.css" />
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)}></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" aria-label="Goldfin Group home"><img class="nav-logo" src="/assets/logo.png" alt="Goldfin Group"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" onclick="toggleNav()"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="/how-it-works">How it works</a>
+      <a href="/about">About Ryan</a>
+      <a href="/insights">Insights</a>
+      <a href="/locations">Locations</a>
+      <a href="/pricing">Pricing</a>
+      <a class="btn btn-gold" href="/book">Book a 15-minute call</a>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop" onclick="toggleNav()"></div>
+  </div>
+</nav>
+<main>
+  <slot />
+</main>
+<footer>
+  <div class="wrap">
+    <img src="/assets/avatar.png" alt="" aria-hidden="true" style="height:44px;width:auto;margin-bottom:24px;opacity:.9">
+    <p class="canonical">Goldfin Group is a wealth management firm headquartered in Franklin, Tennessee, with a client service office in Albuquerque, New Mexico, serving owners of $7 million to $70 million businesses before, during, and after the sale of their companies.</p>
+    <div class="cols">
+      <div><span class="city">Franklin, TN</span><br>Headquarters</div>
+      <div><span class="city">Albuquerque, NM</span><br>Client Service</div>
+      <div><a class="btn btn-foot" href="/book">Book a 15-minute call</a></div>
+    </div>
+    <p class="legal">Securities and advisory services offered through LPL Financial, a registered investment advisor. Member FINRA/SIPC. The opinions voiced in this material are for general information only and are not intended to provide specific advice or recommendations for any individual.</p>
+  </div>
+</footer>
+
+<script is:inline>
+function toggleNav(){
+  document.getElementById('navLinks').classList.toggle('open');
+  document.getElementById('navToggle').classList.toggle('open');
+  document.getElementById('navBackdrop').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

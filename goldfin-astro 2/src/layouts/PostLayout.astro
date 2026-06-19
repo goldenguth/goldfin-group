@@ -1,0 +1,48 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": frontmatter.title,
+  "datePublished": frontmatter.date,
+  "dateModified": frontmatter.updated || frontmatter.date,
+  "author": { "@type": "Person", "name": "Ryan Guth" },
+  "publisher": { "@type": "Organization", "name": "Goldfin Group" }
+};
+---
+<BaseLayout title={frontmatter.title + " — Goldfin Group"} description={frontmatter.excerpt} path={Astro.url.pathname}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)}></script>
+  <div class="pagehead">
+    <div class="wrap" style="max-width:760px">
+      <p class="eyebrow">{frontmatter.tag}</p>
+      <h1 style="font-size:clamp(32px,4vw,52px)">{frontmatter.title}</h1>
+      <p class="quiet" style="margin-top:18px">{frontmatter.readTime}</p>
+    </div>
+  </div>
+  <section>
+    <div class="wrap article-body" style="max-width:760px">
+      {frontmatter.youtube && (
+        <div style="position:relative;padding-bottom:56.25%;height:0;margin-bottom:40px;border-radius:3px;overflow:hidden">
+          <iframe src={`https://www.youtube.com/embed/${frontmatter.youtube}`} title={frontmatter.title} style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen></iframe>
+        </div>
+      )}
+      <slot />
+      <div class="cta-row" style="margin-top:50px;border-top:1px solid rgba(40,39,40,.12);padding-top:36px">
+        <a class="btn btn-gold" href="/book">Book a 15-minute call</a>
+        <span class="quiet">No pitch. Just the questions you should be asking.</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  .article-body p { font-weight:300; color:rgba(40,39,40,.84); margin-bottom:20px; font-size:18px; line-height:1.7; }
+  .article-body h2 { font-family:var(--serif); font-weight:500; font-size:28px; margin:40px 0 16px; }
+  .article-body h3 { font-family:var(--serif); font-weight:500; font-size:22px; margin:32px 0 12px; }
+  .article-body ul, .article-body ol { margin:0 0 20px 22px; font-weight:300; color:rgba(40,39,40,.84); }
+  .article-body li { margin-bottom:8px; }
+  .article-body strong { font-weight:600; }
+  .article-body em { font-style:italic; }
+  .article-body blockquote { border-left:2px solid var(--gold); padding-left:22px; margin:28px 0; font-family:var(--serif); font-style:italic; font-size:21px; color:var(--gold-rich); }
+</style>
