@@ -1,12 +1,13 @@
 ---
 layout: ../../../layouts/PostLayout.astro
-title: 'Sold a Business? How to Protect Your Money When Everyone Wants a Piece'
-tag: 'After'
-date: '2026-05-15'
-readTime: '9 min read'
-excerpt: "After a sale, every opportunity suddenly comes in quotation marks. Here's the filter that separates the real from the noise."
+title: Sold a Business? How to Protect Your Money When Everyone Wants a Piece
+tag: After
+date: 2026-05-15
+readTime: 9 min read
+excerpt: After a sale, every opportunity suddenly comes in quotation marks.
+  Here's the filter that separates the real from the noise.
 featured: false
-youtube: ""
+youtube: Vzgt6MsBQN0
 ---
 
 Those who dream of a significant liquidity event treat it like the finish line. It's just the beginning. After you sell, every opportunity suddenly comes in quotation marks.
