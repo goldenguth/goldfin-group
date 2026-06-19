@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/assets
+public_folder: /assets
+
+collections:
+  # ── BLOG POSTS ──────────────────────────────────────────────
+  - name: posts
+    label: Blog Posts
+    label_singular: Blog Post
+    folder: src/pages/insights/posts
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    fields:
+      - { label: Layout, name: layout, widget: hidden, default: "../../../layouts/PostLayout.astro" }
+      - { label: Title, name: title, widget: string }
+      - label: Tag
+        name: tag
+        widget: select
+        options: [Before, During, After, Mindset]
+      - { label: Publish Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Read Time, name: readTime, widget: string, hint: 'e.g. "7 min read"' }
+      - { label: Excerpt, name: excerpt, widget: text, hint: "1-2 sentences shown on the listing page" }
+      - { label: Featured, name: featured, widget: boolean, default: false, hint: "Show this post in the featured slot at the top of Insights" }
+      - { label: YouTube Video ID, name: youtube, widget: string, required: false, hint: 'The part after watch?v= in the YouTube URL. Leave blank if none.' }
+      - { label: Body, name: body, widget: markdown }
+
+  # ── PAGES ───────────────────────────────────────────────────
+  - name: pages
+    label: Pages
+    files:
+
+      - label: Home
+        name: home
+        file: src/pages/index.astro
+        fields:
+          - { label: Hero Eyebrow, name: hero_eyebrow, widget: string }
+          - { label: Hero Headline, name: hero_headline, widget: string }
+          - { label: Hero Subhead, name: hero_subhead, widget: text }
+          - { label: Counsel Section Heading, name: counsel_heading, widget: string }
+          - { label: Counsel Section Body, name: counsel_body, widget: text }
+
+      - label: How It Works
+        name: how
+        file: src/pages/how-it-works.astro
+        fields:
+          - { label: Page Content, name: body, widget: markdown }
+
+      - label: About Ryan
+        name: about
+        file: src/pages/about.astro
+        fields:
+          - { label: Page Content, name: body, widget: markdown }
+
+      - label: Pricing
+        name: pricing
+        file: src/pages/pricing.astro
+        fields:
+          - { label: Page Content, name: body, widget: markdown }
+
+      - label: Locations
+        name: locations
+        file: src/pages/locations.astro
+        fields:
+          - { label: Page Content, name: body, widget: markdown }
