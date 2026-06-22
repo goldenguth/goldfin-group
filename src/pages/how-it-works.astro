@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title={'How It Works — Goldfin Group'} description={'One partner coordinating your entire financial picture: the 15-minute call, your number, the team built and led, and twice-yearly Proactive Planning Sessions.'} path={'/how-it-works'}>
+<BaseLayout title={'How It Works — Goldfin Group'} description={'One partner coordinating your entire financial picture: the 15-minute call, your number, the team built and led, twice-yearly Proactive Planning Sessions, and how the engagement works.'} path={'/how-it-works'}>
 
 <style>
   .phase-label{font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:12px;color:var(--gold-rich)}
@@ -25,6 +25,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .ipo-card p{font-weight:300;color:rgba(40,39,40,.78);line-height:1.7}
   .ipo-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
   .ipo-tag{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:2px;background:rgba(13,114,98,.1);color:var(--green)}
+
+  /* Engagement section */
+  .phase-engage .phase-label{color:var(--gold-rich)}
+  .phase-engage .phase-label::after{background:var(--gold)}
+  .engage-intro{font-family:var(--serif);font-size:20px;font-style:italic;line-height:1.6;color:var(--ink);max-width:46ch;margin-bottom:2.5rem;font-weight:400}
+  .engage-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+  @media(max-width:640px){.engage-grid{grid-template-columns:1fr}}
+  .engage-card{padding:30px;border:1px solid rgba(40,39,40,.12);border-radius:3px;background:var(--bone-deep)}
+  .engage-card .stage{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:14px}
+  .engage-card h3{font-family:var(--sans);font-size:19px;font-weight:600;color:var(--ink);margin-bottom:10px}
+  .engage-card p{font-weight:300;color:rgba(40,39,40,.78);line-height:1.7;font-size:15px}
+  .engage-card .fee-line{margin-top:16px;padding-top:16px;border-top:1px solid rgba(40,39,40,.1);font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink)}
+  .engage-card .fee-line span{display:block;font-weight:300;font-size:13px;color:rgba(40,39,40,.6);margin-top:3px}
+  .minimum-bar{display:flex;align-items:flex-start;gap:16px;padding:24px 28px;background:var(--green-deep);border-radius:3px;margin-bottom:18px}
+  .minimum-bar .mb-mark{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--gold);line-height:1;flex-shrink:0;margin-top:2px}
+  .minimum-bar h3{font-family:var(--sans);font-size:16px;font-weight:600;color:var(--bone);margin-bottom:6px}
+  .minimum-bar p{font-weight:300;font-size:14px;color:rgba(246,241,231,.75);line-height:1.65}
+  .consolidate-note{padding:24px 28px;border-left:2px solid var(--gold);background:rgba(203,159,90,.06);border-radius:0 3px 3px 0}
+  .consolidate-note p{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.6;color:var(--ink)}
 </style>
 
 <div class="pagehead">
@@ -114,6 +133,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <p>April and November. We review the tape, update the buckets, revisit the mandate, and get ahead of the next tax year instead of reacting to the last one.</p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="phase-engage" style="margin-top:60px">
+      <p class="phase-label">The engagement</p>
+
+      <p class="engage-intro">We work with a small number of founders, and we coordinate everything. That only works if the relationship is built to fit.</p>
+
+      <div class="minimum-bar">
+        <div class="mb-mark">&#8212;</div>
+        <div>
+          <h3>Who this is built for</h3>
+          <p>Our work is designed for founders with $2M or more in investable assets — typically after a sale, or with a sale on the horizon. Below that, we're likely not the right fit yet, and we'll tell you so on the first call.</p>
+        </div>
+      </div>
+
+      <div class="engage-grid">
+        <div class="engage-card">
+          <div class="stage">Before the sale</div>
+          <h3>Pre-liquidity planning</h3>
+          <p>Before the proceeds exist, the work is preparation: your number, the tax and entity strategy, the timing, the team assembled around the deal. We run this as a flat monthly advisory engagement for as long as it takes to get you to the table.</p>
+          <div class="fee-line">A flat monthly engagement<span>Retired the moment your proceeds are under management.</span></div>
+        </div>
+        <div class="engage-card">
+          <div class="stage">After the sale</div>
+          <h3>Wealth management</h3>
+          <p>Once the sale closes and your proceeds are consolidated under our care, the monthly engagement gives way to a single, transparent asset-based fee. It scales down as the relationship grows — the more we steward, the lower your effective rate.</p>
+          <div class="fee-line">One transparent fee that scales with you<span>The full schedule is walked through in your go-forward plan.</span></div>
+        </div>
+      </div>
+
+      <div class="consolidate-note">
+        <p>We manage the whole picture — which is why we ask that your investable assets are consolidated under our care. It's the only way one partner can truly coordinate every dot.</p>
       </div>
     </div>
 
