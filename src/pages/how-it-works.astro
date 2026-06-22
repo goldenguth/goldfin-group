@@ -44,6 +44,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .minimum-bar p{font-weight:300;font-size:14px;color:rgba(246,241,231,.75);line-height:1.65}
   .consolidate-note{padding:24px 28px;border-left:2px solid var(--gold);background:rgba(203,159,90,.06);border-radius:0 3px 3px 0}
   .consolidate-note p{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.6;color:var(--ink)}
+
+  /* Fee table */
+  .fee-table-intro{font-weight:300;color:rgba(40,39,40,.78);line-height:1.7;max-width:54ch;margin-bottom:1.75rem}
+  .fee-table{width:100%;border-collapse:collapse;margin-bottom:14px;background:var(--bone-deep);border:1px solid rgba(40,39,40,.12);border-radius:3px;overflow:hidden}
+  .fee-table th{text-align:left;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-rich);padding:16px 24px;border-bottom:1px solid rgba(40,39,40,.12);background:rgba(203,159,90,.05)}
+  .fee-table th:last-child,.fee-table td:last-child{text-align:right}
+  .fee-table td{padding:15px 24px;font-family:var(--sans);font-size:15px;font-weight:300;color:rgba(40,39,40,.85);border-bottom:1px solid rgba(40,39,40,.07)}
+  .fee-table tr:last-child td{border-bottom:none}
+  .fee-table td.rate{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+  .fee-foot{font-size:13px;font-weight:300;color:rgba(40,39,40,.6);line-height:1.65;max-width:60ch}
+  .fee-foot strong{font-weight:600;color:rgba(40,39,40,.8)}
+
+  /* FAQ */
+  .faq-list{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(40,39,40,.12)}
+  .faq-item{border-bottom:1px solid rgba(40,39,40,.12);padding:26px 0;display:grid;grid-template-columns:1fr;gap:10px}
+  .faq-item h3{font-family:var(--sans);font-size:17px;font-weight:600;color:var(--ink);line-height:1.4}
+  .faq-item p{font-weight:300;color:rgba(40,39,40,.78);line-height:1.75;font-size:15px}
+  .faq-item p strong{font-weight:600;color:var(--ink)}
+  .custody-bar{display:flex;align-items:flex-start;gap:18px;padding:26px 28px;background:var(--green-deep);border-radius:3px;margin-bottom:2.25rem}
+  .custody-bar svg{flex-shrink:0;margin-top:2px}
+  .custody-bar h3{font-family:var(--sans);font-size:16px;font-weight:600;color:var(--bone);margin-bottom:7px}
+  .custody-bar p{font-weight:300;font-size:14px;color:rgba(246,241,231,.78);line-height:1.7}
+  .custody-bar p strong{color:var(--gold);font-weight:600}
 </style>
 
 <div class="pagehead">
@@ -166,6 +189,70 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="consolidate-note">
         <p>We manage the whole picture — which is why we ask that your investable assets are consolidated under our care. It's the only way one partner can truly coordinate every dot.</p>
+      </div>
+    </div>
+
+    <div class="phase-engage" style="margin-top:60px">
+      <p class="phase-label">What it costs, in full</p>
+
+      <p class="fee-table-intro">No retainers hidden in fine print. Once your proceeds are under management, you pay one annual advisory fee, billed as a percentage of the assets we steward. It's marginal — you pay each rate only on the dollars that fall within that band, and your blended rate drops as the relationship grows.</p>
+
+      <table class="fee-table">
+        <thead>
+          <tr><th>On assets in this range</th><th>Annual advisory fee</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>The first $250,000</td><td class="rate">1.50%</td></tr>
+          <tr><td>The next $250,000</td><td class="rate">1.45%</td></tr>
+          <tr><td>The next $500,000</td><td class="rate">1.35%</td></tr>
+          <tr><td>The next $1,500,000</td><td class="rate">1.15%</td></tr>
+          <tr><td>The next $2,500,000</td><td class="rate">0.95%</td></tr>
+          <tr><td>The next $5,000,000</td><td class="rate">0.70%</td></tr>
+          <tr><td>Everything above $10,000,000</td><td class="rate">0.55%</td></tr>
+        </tbody>
+      </table>
+      <p class="fee-foot"><strong>How to read this:</strong> a $1,000,000 relationship pays 1.50% on the first $250K, 1.45% on the next $250K, and 1.35% on the final $500K — a blended rate of about 1.41%, not a flat 1.50%. As the relationship grows, your effective rate falls. There are no separate platform fees, transaction commissions, or surprise line items on top.</p>
+    </div>
+
+    <div class="phase-engage" style="margin-top:60px">
+      <p class="phase-label">The questions founders actually ask</p>
+
+      <div class="custody-bar">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+          <path d="M17 3l11 4v8c0 7-4.7 12.4-11 14C10.7 27.4 6 22 6 15V7l11-4z" stroke="#CB9F5A" stroke-width="1.3" fill="none"/>
+          <path d="M12.5 16.5l3 3 6-6.5" stroke="#CB9F5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <h3>We never touch your money. We only advise it.</h3>
+          <p>Your assets are held at <strong>LPL Financial</strong>, the largest independent broker-dealer in the country, and titled in your name or your entity's name. We are your advisor, not your custodian — the two are deliberately separate. We can manage and direct your accounts, but we can never take possession of your assets. That separation is the structural safeguard that the famous frauds never had.</p>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Whose money is it?</h3>
+          <p><strong>Yours. Always.</strong> Every dollar is held in an account titled to you or the entity that funded it. We direct the strategy; you own the assets. Nothing is pooled, commingled, or held in Goldfin's name.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who actually holds my assets?</h3>
+          <p>LPL Financial serves as independent custodian. They hold the assets, produce your statements, and process every transaction. You can verify your balances directly with LPL at any time, independent of us — which is exactly the point.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I leave?</h3>
+          <p><strong>Whenever you want.</strong> There are no contract periods, no lock-ups, and no surrender charges. We earn the relationship every year, not by trapping you in one. Our clients stay for the long term because they choose to — and we'd rather it always be a choice.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How are you paid?</h3>
+          <p>From the advisory fee above, deducted directly from your accounts and itemized on your LPL statements. No hidden commissions, no product kickbacks, no incentive to sell you anything. Our compensation rises and falls with the value of your assets, which keeps us on the same side of the table as you.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long is the relationship meant to last?</h3>
+          <p>For the long haul — through the sale, the years after, and ideally the next generation. But "meant to" and "required to" are different things. The relationship lasts exactly as long as we keep earning it.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why do you require all my assets in one place?</h3>
+          <p>Because we can't coordinate what we can't see. One partner connecting every dot — tax, estate, investments, giving — only works when the whole picture sits in one place. Scattered accounts are how things fall through the cracks at exactly the wrong moment.</p>
+        </div>
       </div>
     </div>
 
