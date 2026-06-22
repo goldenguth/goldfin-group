@@ -2,27 +2,126 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title={'How It Works — Goldfin Group'} description={'One partner coordinating your entire financial picture: the 15-minute call, your number, the team built and led, and twice-yearly Proactive Planning Sessions.'} path={'/how-it-works'}>
+
+<style>
+  .phase-label{font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:12px;color:var(--gold-rich)}
+  .phase-label::after{content:"";flex:1;height:1px;background:var(--gold);opacity:.3}
+  .phase-client .phase-label{color:var(--green)}
+  .phase-client .phase-label::after{background:var(--green)}
+  .how-steps{display:flex;flex-direction:column;gap:0}
+  .how-step{display:grid;grid-template-columns:64px 1fr;gap:0 24px;padding:28px 0;border-bottom:1px solid rgba(40,39,40,.1)}
+  .how-step:last-child{border-bottom:none}
+  .step-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:20px;font-weight:400;flex-shrink:0;margin-top:3px;background:var(--bone-deep);color:var(--gold-rich);border:1.5px solid var(--gold)}
+  .phase-client .step-num{background:var(--green-deep);color:var(--bone);border:none;font-size:18px}
+  .how-step h3{font-family:var(--sans);font-size:18px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+  .how-step p{font-weight:300;color:rgba(40,39,40,.78);line-height:1.7}
+  .become-client{display:flex;align-items:center;gap:16px;margin:2.5rem 0 2rem;padding:18px 24px;background:var(--green-deep);border-radius:3px}
+  .become-client svg{flex-shrink:0}
+  .become-client-text{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--bone)}
+  .become-client-sub{font-family:var(--sans);font-size:12px;color:rgba(246,241,231,.55);margin-top:4px;letter-spacing:.04em}
+  .ipo-card{display:grid;grid-template-columns:64px 1fr;gap:0 24px;padding:28px;background:rgba(13,114,98,.07);border:1px solid rgba(13,114,98,.22);border-radius:3px;margin-bottom:2px}
+  .ipo-mark{width:48px;height:48px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--sans);font-size:8.5px;font-weight:700;letter-spacing:.05em;text-align:center;line-height:1.3;flex-shrink:0;margin-top:3px}
+  .ipo-card h3{font-family:var(--sans);font-size:18px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+  .ipo-card p{font-weight:300;color:rgba(40,39,40,.78);line-height:1.7}
+  .ipo-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .ipo-tag{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:2px;background:rgba(13,114,98,.1);color:var(--green)}
+</style>
+
 <div class="pagehead">
   <div class="wrap">
     <p class="eyebrow">How it works</p>
-    <h1>One quarterback. <em>Every dot connected.</em></h1>
+    <h1>One partner. <em>Every dot connected.</em></h1>
     <p class="lead">A team with no leader is just highly skilled individuals running around the field. If they score, it's by chance. Here's what our coordination actually looks like.</p>
   </div>
 </div>
+
 <section>
   <div class="wrap">
-    <div class="num-steps">
-      <div class="step"><div class="n">01</div><div><h3>The 15-minute call</h3><p>No pitch. We talk about where you are: thinking about selling, under LOI, or staring at an inbound the wire. You leave with the questions you should be asking, whether or not we ever work together.</p></div></div>
-      <div class="step"><div class="n">02</div><div><h3>Discovery: Your number, reverse-engineered</h3><p>One hour. We help you determine the number you need to gain true independence: after taxes, fees, family obligations, giving, and what your month-to-month life costs. Everything gets a price tag so you can move forward from a position of confidence.</p></div></div>
-      <div class="step"><div class="n">03</div><div><h3>The Go-Forward Plan, to provide clarity</h3><p>We'll deliver you a one-page plan with your number at the top. This plan serves as our proposal. No 60-page decks full of charts you don't care about. Our go-forward plan is the list we'll work from day-one should we decide to work together. </p></div></div>
-      <div class="step"><div class="n">*</div><div><h3>The Team: Coordinated</h3><p>Tax strategists, M&A advisors, attorneys, bankers: we make the introductions where needed, set the agendas, and call the plays so their work compounds instead of colliding.</p></div></div>
-      <div class="step"><div class="n">*</div><div><h3>Access, as needed</h3><p>We keep an intentionally small client list so we can provide you concierge access as needed. You'll have a direct line to Ryan without phone trees and voicemails. </p></div></div> 
-      <div class="step"><div class="n">*</div><div><h3>The Proactive Planning Session, twice a year</h3><p>April and November. We review the tape, update the buckets, revisit the mandate, and get ahead of the next tax year instead of reacting to the last one.</p></div></div>
+
+    <div class="phase-prospect">
+      <p class="phase-label">Becoming a client</p>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>The 15-minute call</h3>
+            <p>No pitch. We talk about where you are: thinking about selling, under LOI, or staring at an inbound offer. You leave with the questions you should be asking, whether or not we ever work together.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Discovery: your number, reverse-engineered</h3>
+            <p>One hour. We help you determine the number you need to gain true independence — after taxes, fees, family obligations, giving, and what your month-to-month life costs. Everything gets a price tag so you move forward from a position of confidence.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>The go-forward plan</h3>
+            <p>We deliver a one-page plan with your number at the top. No 60-page decks full of charts you don't care about. This is our proposal — the list we'll work from day one should we decide to work together.</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="become-client">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="15" stroke="rgba(203,159,90,.4)" stroke-width="1"/>
+        <path d="M16 8v16M9 17l7 7 7-7" stroke="#CB9F5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="become-client-text">You become a client</div>
+        <div class="become-client-sub">Everything below is part of the ongoing relationship</div>
+      </div>
+    </div>
+
+    <div class="phase-client">
+      <p class="phase-label">As a client</p>
+
+      <div class="ipo-card">
+        <div class="ipo-mark">IPO<br>MEETING</div>
+        <div>
+          <h3>The IPO meeting — investments, priorities, and outcomes</h3>
+          <p>Our first meeting together. We establish your investment policy, define your goals and KPIs, and agree on what a successful outcome looks like. This is the foundation everything else is built on.</p>
+          <div class="ipo-tags">
+            <span class="ipo-tag">Investment policy</span>
+            <span class="ipo-tag">Goals &amp; KPIs</span>
+            <span class="ipo-tag">Success criteria</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="step-num">★</div>
+          <div>
+            <h3>The team, coordinated</h3>
+            <p>Tax strategists, M&amp;A advisors, attorneys, bankers: we make the introductions where needed, set the agendas, and call the plays so their work compounds instead of colliding.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">★</div>
+          <div>
+            <h3>Access, as needed</h3>
+            <p>We keep an intentionally small client list so we can provide concierge access. You have a direct line without phone trees and voicemails.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">★</div>
+          <div>
+            <h3>The proactive planning session, twice a year</h3>
+            <p>April and November. We review the tape, update the buckets, revisit the mandate, and get ahead of the next tax year instead of reacting to the last one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="cta-row" style="margin-top:50px">
       <a class="btn btn-gold" href="/book">Book a 15-minute call</a>
       <span class="quiet">Conversations get serious around $1M+ in annual profit.</span>
     </div>
+
   </div>
 </section>
 </BaseLayout>
