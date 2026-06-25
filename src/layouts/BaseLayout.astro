@@ -85,8 +85,7 @@ function closeNav(){
 document.addEventListener('DOMContentLoaded', function(){
   var backdrop = document.getElementById('navBackdrop');
   backdrop.addEventListener('click', closeNav);
-  backdrop.addEventListener('touchstart', function(e){ e.preventDefault(); closeNav(); }, {passive:false});
-});
+backdrop.addEventListener('touchend', function(e){ e.preventDefault(); closeNav(); }, {passive:false});});
 </script>
 <a 
   href="https://brokercheck.finra.org" 
