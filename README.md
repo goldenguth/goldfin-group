@@ -37,12 +37,12 @@ To deploy this way: run `npm run build`, then drag the resulting `dist` folder t
 
 ---
 
-## CONNECTING goldfingroup.com (after Cat approves)
+## CONNECTING goldfin.group (after Cat approves)
 
-1. In Netlify: Site settings > Domain management > Add custom domain > `goldfingroup.com`
+1. In Netlify: Site settings > Domain management > Add custom domain > `goldfin.group`
 2. Netlify shows you DNS records to add
 3. Log into wherever the domain is registered, add those records
-4. Wait a few hours, confirm the site loads at goldfingroup.com
+4. Wait a few hours, confirm the site loads at goldfin.group
 5. Cancel ClickFunnels
 
 SSL/HTTPS is automatic and free once the domain connects.
