@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title={'Services — Goldfin Group'} description={'Goldfin Group provides comprehensive financial planning and wealth management for owners of $7 million to $70 million businesses, with a focus on exit planning, tax strategy, estate planning, investment management, and multi-generational family planning.'} path={'/services'}>
+
+<style>
+  .services-intro{max-width:62ch;margin-top:20px;font-size:18px;font-weight:300;color:rgba(40,39,40,.78);line-height:1.7}
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:48px;background:rgba(40,39,40,.1);border:1px solid rgba(40,39,40,.1);border-radius:3px;overflow:hidden}
+  .service-card{background:var(--bone);padding:40px 36px}
+  .service-card:nth-child(odd){background:var(--bone)}
+  .service-card:nth-child(even){background:var(--bone-deep)}
+  .service-icon{width:36px;height:36px;margin-bottom:18px;color:var(--gold-rich)}
+  .service-card h2{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--ink);margin-bottom:10px;line-height:1.2}
+  .service-card .service-lead{font-size:15px;font-weight:300;color:rgba(40,39,40,.7);margin-bottom:18px;line-height:1.65}
+  .service-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+  .service-card ul li{font-size:14px;font-weight:300;color:rgba(40,39,40,.75);padding-left:16px;position:relative;line-height:1.55}
+  .service-card ul li::before{content:"—";position:absolute;left:0;color:var(--gold);font-weight:400}
+  .band-dark{background:var(--ink);color:var(--bone);padding:11vh 0;margin-top:0}
+  .band-dark h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,3vw,38px);line-height:1.3;max-width:28ch}
+  .band-dark h2 em{font-style:italic;color:var(--gold)}
+  .band-dark p{font-weight:300;color:rgba(246,241,231,.72);max-width:58ch;margin-top:16px;font-size:17px;line-height:1.7}
+  .disclaimer{margin-top:48px;padding:28px 32px;background:var(--bone-deep);border-left:2px solid var(--gold);font-size:13px;font-weight:300;color:rgba(40,39,40,.65);line-height:1.7}
+  @media(max-width:860px){.services-grid{grid-template-columns:1fr}}
+</style>
+
+<div class="pagehead">
+  <div class="wrap">
+    <p class="eyebrow">Services</p>
+    <h1>Everything in one place. <em>Nothing falling through the cracks.</em></h1>
+    <p class="services-intro">As a CERTIFIED FINANCIAL PLANNER™ professional operating with a family-office approach, we coordinate across every dimension of your financial life — not just the accounts under our management. Below is the full scope of what that means in practice.</p>
+  </div>
+</div>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="services-grid">
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 4L4 12v12l14 8 14-8V12L18 4z"/><path d="M18 4v20M4 12l14 8 14-8"/>
+        </svg>
+        <h2>Exit &amp; Business Transition Planning</h2>
+        <p class="service-lead">The work that starts before an offer arrives and continues long after the wire hits. This is the core of what we do.</p>
+        <ul>
+          <li>Exit readiness assessment and timing strategy (Swing Theory)</li>
+          <li>Business valuation orientation and multiple analysis</li>
+          <li>Deal structure evaluation: asset vs. stock sales, rollover equity, earn-outs</li>
+          <li>Pre-sale entity and ownership structure review</li>
+          <li>Coordination with M&amp;A advisors, investment bankers, and deal attorneys</li>
+          <li>Qualified Small Business Stock (QSBS) eligibility and planning</li>
+          <li>Installment sale and deferred recognition strategies</li>
+          <li>Charitable strategies timed to a liquidity event</li>
+          <li>Post-sale mandate: buckets, mandates, and the 90-day capital plan</li>
+          <li>Business succession planning for multi-generational or family-owned businesses</li>
+          <li>Second-bite-of-the-apple planning for PE-backed rollover scenarios</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="8" width="28" height="20" rx="2"/><path d="M4 14h28M12 8V6M24 8V6"/>
+        </svg>
+        <h2>Tax Planning &amp; Strategy</h2>
+        <p class="service-lead">Proactive, multi-year strategy coordinated with your CPA — the forward-looking work compliance firms don't have time for.</p>
+        <ul>
+          <li>Multi-year income tax projection and planning</li>
+          <li>Capital gains management and timing</li>
+          <li>Tax-efficient investment account placement (asset location)</li>
+          <li>Roth conversion analysis and execution planning</li>
+          <li>Charitable giving strategies: DAFs, QCDs, appreciated asset gifting</li>
+          <li>Business entity taxation review in anticipation of a sale</li>
+          <li>Tax implications of deal structure and purchase price allocation</li>
+          <li>Estate and gift tax planning coordinated with estate counsel</li>
+          <li>Generation-skipping transfer (GST) tax awareness and planning</li>
+          <li>Coordination with your CPA for return consistency and strategy alignment</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 4C10.3 4 4 10.3 4 18s6.3 14 14 14 14-6.3 14-14S25.7 4 18 4z"/><path d="M18 12v6l4 4"/>
+        </svg>
+        <h2>Estate &amp; Legacy Planning</h2>
+        <p class="service-lead">The tax most owners have never heard of — until a sale makes it their largest one. We plan before the wire, not after.</p>
+        <ul>
+          <li>Estate tax exposure analysis and federal exemption planning</li>
+          <li>Beneficiary designation audit across all accounts and policies</li>
+          <li>Trust planning coordination: revocable, irrevocable, SLAT, GRAT, IDGT</li>
+          <li>Titling and property transfer strategy</li>
+          <li>Incapacity planning: healthcare directives, durable power of attorney</li>
+          <li>Life insurance needs analysis in the context of estate liquidity</li>
+          <li>Annual gifting strategy ($18,000 exclusion and beyond)</li>
+          <li>Intra-family transfer and business interest discount strategies</li>
+          <li>Charitable remainder trusts and private foundation awareness</li>
+          <li>Multi-generational legacy planning: values, governance, family communication</li>
+          <li>Post-mortem estate planning coordination with estate counsel</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 28l8-8 6 6 8-10 6 4"/><rect x="4" y="4" width="28" height="24" rx="2"/>
+        </svg>
+        <h2>Investment Management</h2>
+        <p class="service-lead">Discretionary portfolio management built around your goals, timeline, and tax situation — not a model portfolio off a shelf.</p>
+        <ul>
+          <li>Investment Policy Statement (IPS) development</li>
+          <li>Asset allocation and portfolio construction</li>
+          <li>Discretionary investment management through LPL Financial</li>
+          <li>Tax-loss harvesting and gain management</li>
+          <li>Alternative investment evaluation (the 5R Filter for post-exit opportunities)</li>
+          <li>Concentrated position management and diversification strategy</li>
+          <li>Risk tolerance assessment and ongoing portfolio suitability review</li>
+          <li>Manager and fund due diligence</li>
+          <li>Liquidity planning: immediate needs vs. long-term capital deployment</li>
+          <li>Post-exit capital bucketing: financial freedom, entrepreneurial, and legacy accounts</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="12" r="6"/><path d="M6 30c0-6.627 5.373-12 12-12s12 5.373 12 12"/>
+        </svg>
+        <h2>Retirement &amp; Income Planning</h2>
+        <p class="service-lead">Your number, clearly defined — and a plan for generating income from wealth rather than a business.</p>
+        <ul>
+          <li>Retirement needs analysis and "your number" calculation</li>
+          <li>Cash flow modeling: pre- and post-exit income projections</li>
+          <li>Retirement plan selection and optimization for business owners (SEP, SIMPLE, Solo 401k, Defined Benefit)</li>
+          <li>Qualified and non-qualified plan distribution strategy</li>
+          <li>Required Minimum Distribution (RMD) planning</li>
+          <li>Social Security optimization and timing analysis</li>
+          <li>Medicare planning and healthcare cost management</li>
+          <li>Retirement income drawdown sequencing</li>
+          <li>Sustainable withdrawal rate analysis</li>
+          <li>Eldercare and aging parent financial planning</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 4l4 8 9 1.3-6.5 6.3 1.5 9L18 24l-8 4.6 1.5-9L5 13.3 14 12z"/>
+        </svg>
+        <h2>Risk Management &amp; Insurance</h2>
+        <p class="service-lead">Protecting what you've built before, during, and after a sale — including the risks most owners don't think about until it's too late.</p>
+        <ul>
+          <li>Comprehensive insurance needs analysis</li>
+          <li>Life insurance audit: coverage adequacy, policy performance, ownership structure</li>
+          <li>Disability income insurance review</li>
+          <li>Long-term care insurance analysis and planning</li>
+          <li>Key-person insurance evaluation for business owners pre-sale</li>
+          <li>Buy-sell agreement insurance coordination</li>
+          <li>Property and casualty coverage review (referral to specialist)</li>
+          <li>Umbrella liability coverage assessment</li>
+          <li>Estate liquidity analysis: ensuring assets are accessible when needed</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 8h16M10 14h10M10 20h12M8 4h20a2 2 0 012 2v24a2 2 0 01-2 2H8a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+        </svg>
+        <h2>Cash Flow &amp; Balance Sheet Planning</h2>
+        <p class="service-lead">Clarity on your full financial picture — especially in the transition years when income and expenses are both in flux.</p>
+        <ul>
+          <li>Personal financial statement preparation and analysis</li>
+          <li>Cash flow monitoring and monthly expense benchmarking</li>
+          <li>Debt management and financing strategy</li>
+          <li>Pre-sale liquidity planning: ensuring adequate personal capital during a transaction</li>
+          <li>Post-sale income gap analysis: bridging the period before investment income is established</li>
+          <li>Education funding planning for children (529s, UTMA, funding strategies)</li>
+          <li>Major purchase planning: real estate, vehicles, business reinvestment</li>
+          <li>Charitable giving budget and vehicle selection</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 18h4l4-10 4 20 4-14 4 8 4-4"/><circle cx="30" cy="12" r="4"/>
+        </svg>
+        <h2>Multi-Generational &amp; Family Planning</h2>
+        <p class="service-lead">The responsible one in the family often carries more than one household. We plan across generations, not just for one balance sheet.</p>
+        <ul>
+          <li>Family financial planning coordination across generations</li>
+          <li>Aging parent financial planning: care costs, housing transitions, estate coordination</li>
+          <li>Family governance and wealth transfer communication</li>
+          <li>Custodial account and minor trust planning</li>
+          <li>Financial education for adult children transitioning into wealth</li>
+          <li>Gifting strategy across family members</li>
+          <li>Special needs planning (referral to specialist as appropriate)</li>
+          <li>Blended family and beneficiary complexity navigation</li>
+          <li>The Goldfin Moment: orienting family wealth toward purpose and impact</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="disclaimer">
+      All services are provided through Guth Financial LLC dba Goldfin Group. Securities and advisory services offered through LPL Financial, a registered investment advisor, Member FINRA/SIPC. The scope of services provided to any individual client is determined by the terms of the client's advisory agreement. Insurance products and services are offered through separately licensed entities. Tax and legal services are not provided by Goldfin Group or LPL Financial; we coordinate with your existing CPA and attorney and can provide referrals to qualified professionals.
+    </div>
+
+    <div class="cta-row" style="margin-top:48px">
+      <a class="btn btn-gold" href="/book">Book a 15-minute call</a>
+      <span class="quiet">We'll talk through which of these areas matter most for your situation right now.</span>
+    </div>
+
+  </div>
+</section>
+
+<div class="band-dark">
+  <div class="wrap">
+    <h2>We don't just manage accounts. We coordinate <em>everything around them.</em></h2>
+    <p>Most advisors manage what you hand them. We oversee the full picture — the accounts, the deal, the estate, the family, and the next chapter — the way a family office would, for a client list we keep deliberately small.</p>
+  </div>
+</div>
+
+</BaseLayout>
