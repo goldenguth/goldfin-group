@@ -34,13 +34,16 @@ const orgSchema = {
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles/global.css" />
   <script type="application/ld+json" set:html={JSON.stringify(orgSchema)}></script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" is:inline></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" is:inline></script>
 </head>
 <body>
+
 <nav>
   <div class="nav-inner">
     <a href="/" aria-label="Goldfin Group home"><img class="nav-logo" src="/assets/logo.png" alt="Goldfin Group"></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu" onclick="toggleNav()"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-links" id="navLinks">
       <a href="/how-it-works">How it works</a>
       <a href="/services">Services</a>
@@ -49,12 +52,15 @@ const orgSchema = {
       <a href="/contact">Contact</a>
       <a class="btn btn-gold" href="/book">Book a 15-minute call</a>
     </div>
-   </div>
+  </div>
 </nav>
+
 <div class="nav-backdrop" id="navBackdrop"></div>
+
 <main>
   <slot />
 </main>
+
 <footer>
   <div class="wrap">
     <img src="/assets/avatar.png" alt="" aria-hidden="true" style="height:44px;width:auto;margin-bottom:24px;opacity:.9">
@@ -68,28 +74,9 @@ const orgSchema = {
   </div>
 </footer>
 
-<script is:inline>
-function toggleNav(){
-  var links = document.getElementById('navLinks');
-  var toggle = document.getElementById('navToggle');
-  var backdrop = document.getElementById('navBackdrop');
-  links.classList.toggle('open');
-  toggle.classList.toggle('open');
-  backdrop.classList.toggle('open');
-}
-function closeNav(){
-  document.getElementById('navLinks').classList.remove('open');
-  document.getElementById('navToggle').classList.remove('open');
-  document.getElementById('navBackdrop').classList.remove('open');
-}
-document.addEventListener('DOMContentLoaded', function(){
-  var backdrop = document.getElementById('navBackdrop');
-  backdrop.addEventListener('click', closeNav);
-backdrop.addEventListener('touchend', function(e){ e.preventDefault(); closeNav(); }, {passive:false});});
-</script>
-<a 
-  href="https://brokercheck.finra.org" 
-  target="_blank" 
+<a
+  href="https://brokercheck.finra.org"
+  target="_blank"
   rel="noopener noreferrer"
   style="position:fixed;bottom:24px;right:24px;z-index:999;display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--bone);font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:10px 14px;border-radius:2px;opacity:.75;transition:opacity .2s"
   onmouseover="this.style.opacity='1'"
@@ -104,10 +91,34 @@ backdrop.addEventListener('touchend', function(e){ e.preventDefault(); closeNav(
 </a>
 
 <script is:inline>
+function toggleNav(){
+  var open = document.getElementById('navLinks').classList.contains('open');
+  if(open){ closeNav(); } else { openNav(); }
+}
+function openNav(){
+  document.getElementById('navLinks').classList.add('open');
+  document.getElementById('navToggle').classList.add('open');
+  document.getElementById('navBackdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeNav(){
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('navToggle').classList.remove('open');
+  document.getElementById('navBackdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var backdrop = document.getElementById('navBackdrop');
+  backdrop.addEventListener('click', closeNav);
+  backdrop.addEventListener('touchend', closeNav);
+});
+</script>
+
+<script is:inline>
 if (window.netlifyIdentity) {
-  window.netlifyIdentity.on("init", user => {
+  window.netlifyIdentity.on("init", function(user) {
     if (!user) {
-      window.netlifyIdentity.on("login", () => {
+      window.netlifyIdentity.on("login", function() {
         document.location.href = "/admin/";
       });
     }
