@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title={'Terms of Service — Goldfin Group'} description={'Terms of Service for Goldfin Group, a wealth management firm headquartered in Franklin, Tennessee.'} path={'/terms'}>
+
+<div class="pagehead">
+  <div class="wrap">
+    <p class="eyebrow">Legal</p>
+    <h1>Terms of Service</h1>
+    <p class="lead">Last updated: June 2026</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap" style="max-width:760px">
+    <div class="prose">
+
+      <h2 style="font-size:22px;margin:0 0 12px">1. Acceptance of Terms</h2>
+      <p>By accessing or using the website located at goldfin.group (the "Site"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Site. These terms may be updated from time to time; continued use of the Site following any changes constitutes acceptance of the revised terms.</p>
+
+      <h2 style="font-size:22px;margin:24px 0 12px">2. About Goldfin Group</h2>
+      <p>Goldfin Group is a trade name of Guth Financial LLC. Securities and advisory services are offered through LPL Financial, a registered investment advisor, Member FINRA/SIPC. Goldfin Group and LPL Financial are separate entities.</p>
+
+      <h2 style="font-size:22px;margin:24px 0 12px">3. Informational Purposes Only</h2>
+      <p>The content on this Site is provided for general informational and educational purposes only. Nothing on this Site constitutes investment advice, financial planning advice, tax advice, legal advice, or any other professional advice. The information presented does not take into account your individual financial situation, objectives, or needs.</p>
+      <p>Prior to making any financial, investment, tax, or legal decisions, you should consult with a qualified professional advisor. Reading or interacting with content on this Site does not create an advisor-client relationship between you and Goldfin Group or LPL Financial.</p>
+
+      <h2 style="font-size:22px;margin:24px 0 12px">4. No Client Relationship</h2>
+      <p>Use of this Site, including scheduling a consultation through our booking system, does not establish a client relationship with Goldfin Group or LPL Financial. A client relationship is only established upon execution of a written advisory agreement.</p>
+
+      <h2 style="font-size:22px;margin:24px 0 12px">5. Forward-Looking Statements</h2>
+      <p>Certain content on this Site may contain forward-looking statements or projections. These are provided for illustrative purposes only and should not be construed as guarantees of future results. Past performance is not indicative of future results. All investments involve risk, including the possible loss of principal.</p>
+
+      <h2 style="font-size:22px;margin:24px 0 12px">6. Third-Party Links</h2>
+      <p>This Site may contain links to third-party websites, including our booking system, FINRA BrokerCheck, and other resources. These links are provided for convenience only. Goldfin Group does not endorse or take responsibility for the content, accuracy, or practices of any third-party sites.</p>
+
+      <h2 style="font-size:22px;margin:24px 0 12px">7. Intellectual Property</h2>
+      <p>All content on this Site, including text, graphics, logos, images, and the compilation thereof, is the property of Guth Financial LLC dba Goldfin Group or its content suppliers and is protected by applicable copyright and intellectual property laws. Unauthorized reproduction or distribution of any content from this Site is prohibited.</p>
+      <p><em>Permission to Exit</em> and all related content are the intellectual property of Ryan Guth and may not be reproduced without written permission.</p>
+
+      <h2 style="font-size:22px;margin:24px 0 12px">8. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Guth Financial LLC, Goldfin Group, and their affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, this Site or its content.</p>
+
+      <h2 style="font-size:22px;margin:24px 0 12px">9. Governing Law</h2>
+      <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of Tennessee, without regard to its conflict of law provisions.</p>
+
+      <h2 style="font-size:22px;margin:24px 0 12px">10. Contact</h2>
+      <p>If you have questions about these Terms of Service, please contact us through the booking page at goldfin.group/book.</p>
+
+      <p style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(40,39,40,.12);font-size:13px;color:rgba(40,39,40,.55)">Securities and advisory services offered through LPL Financial, a registered investment advisor, Member FINRA/SIPC. Goldfin Group and LPL Financial are separate entities. The opinions voiced in this material are for general information only and are not intended to provide specific advice or recommendations for any individual.</p>
+
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
