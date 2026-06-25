@@ -49,7 +49,7 @@ const orgSchema = {
       <a href="/contact">Contact</a>
       <a class="btn btn-gold" href="/book">Book a 15-minute call</a>
     </div>
-    <div class="nav-backdrop" id="navBackdrop" onclick="toggleNav()" ontouchstart="toggleNav()"></div>
+   <div class="nav-backdrop" id="navBackdrop"></div>
   </div>
 </nav>
 <main>
@@ -70,10 +70,23 @@ const orgSchema = {
 
 <script is:inline>
 function toggleNav(){
-  document.getElementById('navLinks').classList.toggle('open');
-  document.getElementById('navToggle').classList.toggle('open');
-  document.getElementById('navBackdrop').classList.toggle('open');
+  var links = document.getElementById('navLinks');
+  var toggle = document.getElementById('navToggle');
+  var backdrop = document.getElementById('navBackdrop');
+  links.classList.toggle('open');
+  toggle.classList.toggle('open');
+  backdrop.classList.toggle('open');
 }
+function closeNav(){
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('navToggle').classList.remove('open');
+  document.getElementById('navBackdrop').classList.remove('open');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var backdrop = document.getElementById('navBackdrop');
+  backdrop.addEventListener('click', closeNav);
+  backdrop.addEventListener('touchstart', function(e){ e.preventDefault(); closeNav(); }, {passive:false});
+});
 </script>
 <a 
   href="https://brokercheck.finra.org" 
