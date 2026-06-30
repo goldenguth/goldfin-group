@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Goldfin Group — GreenRope UI Theme
+   Loaded via GreenRope Account Settings > UI CSS URL
+   Hosted at: https://goldfin.group/greenrope-theme.css
+   ========================================================================== */
+
+:root {
+  --gf-primary: #1a2b3d;      /* PLACEHOLDER — replace with real nav/primary color */
+  --gf-accent: #b08d57;        /* PLACEHOLDER — replace with real gold/accent color */
+  --gf-text-light: #f5f2ec;    /* PLACEHOLDER — off-white text on dark backgrounds */
+  --gf-font-serif: 'Fraunces', Georgia, serif;
+  --gf-font-sans: 'Sofia Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* If Fraunces / Sofia Sans aren't already loaded elsewhere on this page,
+   uncomment and point these at wherever you're hosting the font files
+   (Google Fonts, Adobe Fonts, or self-hosted via your own /public/fonts/) */
+
+/*
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Sofia+Sans:wght@400;600&display=swap');
+*/
+
+/* --- Top Navigation Bar -------------------------------------------------- */
+
+.nav_bar {
+  background-color: var(--gf-primary) !important;
+  font-family: var(--gf-font-sans);
+}
+
+.topNavDropdown {
+  background: var(--gf-primary) !important;
+}
+
+.topNavBig {
+  color: var(--gf-text-light) !important;
+  font-family: var(--gf-font-sans);
+  letter-spacing: 0.02em;
+}
+
+.topNavBig:hover,
+.topNavBig.on {
+  color: var(--gf-accent) !important;
+}
+
+.divider {
+  color: var(--gf-accent);
+  opacity: 0.4;
+}
+
+/* --- Headings (add once we confirm selectors) ---------------------------- */
+
+/*
+h1, h2, h3, .panel-header, .card-title {
+  font-family: var(--gf-font-serif);
+  color: var(--gf-primary);
+}
+*/
+
+/* --- Buttons (add once we confirm selectors) ------------------------------ */
+
+/*
+.btn-primary {
+  background-color: var(--gf-accent) !important;
+  border-color: var(--gf-accent) !important;
+  font-family: var(--gf-font-sans);
+}
+*/
