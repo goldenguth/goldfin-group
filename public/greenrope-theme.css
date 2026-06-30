@@ -1,67 +1,131 @@
 /* ==========================================================================
    Goldfin Group — GreenRope UI Theme
    Loaded via GreenRope Account Settings > UI CSS URL
-   Hosted at: https://goldfin.group/greenrope-theme.css
+   Host at: https://goldfin.group/greenrope-theme.css  (place in /public/)
+
+   Strategy: GreenRope's UI is driven by CSS custom properties. We override
+   the STRUCTURAL variables (backgrounds, text, links, headers, inputs) with
+   Goldfin's palette. Functional/status colors (ticket greens, error reds,
+   table rows, DNS/status indicators) are LEFT ALONE on purpose — they carry
+   meaning and shouldn't be re-skinned.
    ========================================================================== */
 
+/* --- Goldfin brand tokens (source of truth: goldfin.group :root) ---------- */
 :root {
-  --gf-primary: #1a2b3d;      /* PLACEHOLDER — replace with real nav/primary color */
-  --gf-accent: #b08d57;        /* PLACEHOLDER — replace with real gold/accent color */
-  --gf-text-light: #f5f2ec;    /* PLACEHOLDER — off-white text on dark backgrounds */
-  --gf-font-serif: 'Fraunces', Georgia, serif;
-  --gf-font-sans: 'Sofia Sans', 'Helvetica Neue', Arial, sans-serif;
+  --gf-bone:      #F6F1E7;
+  --gf-bone-deep: #EFE7D8;
+  --gf-ink:       #282728;
+  --gf-gold:      #CB9F5A;
+  --gf-gold-rich: #A17F47;
+  --gf-green:     #0D7262;
+  --gf-green-deep:#0A4A40;
+  --gf-serif: "Fraunces", Georgia, serif;
+  --gf-sans:  "Sofia Sans", -apple-system, sans-serif;
 }
 
-/* If Fraunces / Sofia Sans aren't already loaded elsewhere on this page,
-   uncomment and point these at wherever you're hosting the font files
-   (Google Fonts, Adobe Fonts, or self-hosted via your own /public/fonts/) */
-
+/* If Fraunces / Sofia Sans aren't otherwise available to the CRM, uncomment
+   and point at wherever you host them (Google Fonts shown as an example). */
 /*
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Sofia+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Sofia+Sans:wght@300;400;500;600&display=swap');
 */
 
-/* --- Top Navigation Bar -------------------------------------------------- */
+/* --- Override GreenRope's structural variables ---------------------------- */
+/* !important on the variable declarations guards against load-order surprises */
+:root {
+  /* Page + main surfaces */
+  --body-background:            var(--gf-bone) !important;
+  --body-background-color:      var(--gf-bone) !important;
+  --main-background-color:      var(--gf-bone) !important;
+
+  /* Sub-navigation */
+  --subnav-background-color:    var(--gf-bone) !important;
+  --subnav-border-bottom-color: var(--gf-bone-deep) !important;
+  --subnav-text-color:          var(--gf-ink) !important;
+
+  /* Content cards — kept white for data legibility, subtle warm shadow */
+  --content-background-color:   #ffffff !important;
+  --content-box-shadow-color:   var(--gf-bone-deep) !important;
+
+  /* Text */
+  --main-text-color:            var(--gf-ink) !important;
+  --main-text-secondary-color:  var(--gf-ink) !important;
+  --main-text-tertiary-color:   var(--gf-green-deep) !important;
+  --highcharts-text-color:      var(--gf-ink) !important;
+
+  /* Links — green primary, gold on hover */
+  --main-link-color:            var(--gf-green) !important;
+  --main-link-hover-color:      var(--gf-gold-rich) !important;
+
+  /* Highlight + dark/alt surfaces */
+  --highlight-background-color: var(--gf-gold) !important;
+  --alt-background-color:       var(--gf-ink) !important;
+
+  /* Inputs */
+  --input-text-color:           var(--gf-ink) !important;
+  --input-border-color:         var(--gf-bone-deep) !important;
+  --selectmenu-background-color: var(--gf-bone-deep) !important;
+
+  /* Widgets / help bubble */
+  --widget-selector-background-color: var(--gf-bone-deep) !important;
+  --help-widget-background-color:     var(--gf-ink) !important;
+  --help-widget-text-color:           var(--gf-bone) !important;
+
+  /* NOTE: intentionally NOT overridden (functional / semantic colors):
+     --green-text-color, --dark-green-text-color, --red-text-color,
+     --purple-text-color, --brown-text-color, --dns-*-color,
+     --even-row-color, --odd-row-color, --assigned-ticket-*,
+     --pipeline-box-shadow-color, --contacts-list-activity-*  */
+}
+
+/* --- Top navigation bar --------------------------------------------------- */
+/* .nav_bar and .topNavDropdown carry hardcoded INLINE colors (#404e60 /
+   rgb(64,78,96)), so these specifically need !important to win.
+   Treatment mirrors the site footer: ink surface, bone text, gold accents. */
 
 .nav_bar {
-  background-color: var(--gf-primary) !important;
-  font-family: var(--gf-font-sans);
+  background-color: var(--gf-ink) !important;
+  font-family: var(--gf-sans);
 }
 
 .topNavDropdown {
-  background: var(--gf-primary) !important;
+  background: var(--gf-ink) !important;
 }
 
 .topNavBig {
-  color: var(--gf-text-light) !important;
-  font-family: var(--gf-font-sans);
+  color: var(--gf-bone) !important;
+  font-family: var(--gf-sans);
   letter-spacing: 0.02em;
 }
 
 .topNavBig:hover,
 .topNavBig.on {
-  color: var(--gf-accent) !important;
+  color: var(--gf-gold) !important;
 }
 
+/* Dropdown items */
+.topNavDropdown a {
+  color: var(--gf-bone) !important;
+}
+.topNavDropdown a:hover {
+  color: var(--gf-gold) !important;
+}
+
+/* The small spacer dots between nav items */
 .divider {
-  color: var(--gf-accent);
-  opacity: 0.4;
+  color: var(--gf-gold);
+  opacity: 0.35;
 }
 
-/* --- Headings (add once we confirm selectors) ---------------------------- */
-
-/*
-h1, h2, h3, .panel-header, .card-title {
-  font-family: var(--gf-font-serif);
-  color: var(--gf-primary);
+/* --- Base typography ------------------------------------------------------ */
+/* Light touch: Sofia Sans on the body. Fraunces on headings is left commented
+   until we confirm GreenRope's heading selectors so we don't mis-target. */
+body {
+  font-family: var(--gf-sans);
 }
-*/
-
-/* --- Buttons (add once we confirm selectors) ------------------------------ */
 
 /*
-.btn-primary {
-  background-color: var(--gf-accent) !important;
-  border-color: var(--gf-accent) !important;
-  font-family: var(--gf-font-sans);
+h1, h2, h3 {
+  font-family: var(--gf-serif);
+  font-weight: 400;
 }
 */
