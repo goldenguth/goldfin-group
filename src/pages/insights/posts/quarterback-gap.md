@@ -8,7 +8,7 @@ excerpt: A financial advisor. A CPA. An attorney. On paper it looks like a team,
   but when you ask how the pieces fit together, there's usually a pause. If no
   one is coordinating how the moving parts of your exit interact, you don't have
   a plan. You have parts.
-featured: true
+featured: false
 youtube: hJ18hW-jY-U
 ---
 One thing I’ve noticed is that a lot of owners feel like they have a plan because they have good people around them.
